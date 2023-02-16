@@ -1,6 +1,6 @@
 //Set up a basic Express server that listens for incoming HTTP requests and responds accordingly.
 
-//Load the 'dotenv' module and call its 'config()' function to load environment variables from a file named '.env' in the root directory of the project. The environment va
+//Load the 'dotenv' module and call its 'config()' function to load environment variables from a file named '.env' in the root directory of the project. The environment variables are loaded into 'process.env' and can be accessed by the application code. 
 require('dotenv').config()
 
 //import the 'express' module and create an instance of the 'express()' application that will create a new Express app that an be used to handle incoming requests and send responses back to the client. 
