@@ -1,7 +1,12 @@
+//Set up a basic Express Router that listens for GET requests to the root route of a web server and responds with string.
+
+//import the Express module and create a new router instance using the 'Router()' function that will define routes for the web server.
 const router = require('express').Router()
 
+//set up a route for the root path of the web server that will listen for GET requests. When GET request is received, excecute the callback function that will send the response t the client with the string "GET/places"
 router.get('/', (req,res) => {
     res.send('GET /places')
 })
 
+//export the router instance so that it can be used by other parts of the application.
 module.exports = router
