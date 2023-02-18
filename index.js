@@ -7,12 +7,15 @@ require('dotenv').config()
 const express = require('express');
 const app = express()
 
+app.set('view engine', 'jsx')
+app.engine('jsx', require('express-react-views').createEngine())
+
 //set up a middleware function that maps all requests that start with '/places' to a router defined in the file './controllers/places' which will allow the router to handle all requests to the '/places' path.
 app.use('/places', require('./controllers/places'))
 
 //set up a route for the root path of hte web server that will listen for GET requests. When a GET request is received, execute the callback function which will send the response to the client with the string "Hello world!"
 app.get('/', (req, res) => {
-    res.send('Hello world!')
+    res.render('home')
 })
 
 //set up a catch-all route that will handle any requests that do not match any of the other routes defined. Send a 404 status code.
