@@ -20,8 +20,10 @@ app.get('/', (req, res) => {
 
 //set up a catch-all route that will handle any requests that do not match any of the other routes defined. Send a 404 status code.
 app.get('*', (req, res) => {
-    res.status(404).send('<h1>404 Page</h1>')
-})
+    res.status(404).render('error404')
+  })
+  
+
 
 //start the web server and tell it to listen for incoming requests on the port specified in the 'PORT' environment variable.
 app.listen(process.env.PORT, () => {
