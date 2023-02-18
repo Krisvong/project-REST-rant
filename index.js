@@ -21,4 +21,6 @@ app.get('*', (req, res) => {
 })
 
 //start the web server and tell it to listen for incoming requests on the port specified in the 'PORT' environment variable.
-app.listen(process.env.PORT)
+app.listen(process.env.PORT, () => {
+    console.log("I AM ALIVE!")
+})
