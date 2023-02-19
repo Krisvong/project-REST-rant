@@ -1,13 +1,11 @@
-//import the React library
 const React = require('react')
-//import the 'Def' component from the '../default' file. Use to wrap the content of this component in a layout that provides consistent structure and styling for all pages of the application.
 const Def = require('../default')
 
-function new_form() {
+function edit_form(){
     return (
         <Def>
             <main>
-                <h1>Add a New Place</h1>
+                <h1>Edit a Place</h1>
                 <form>
                     <label>
                         Name:
@@ -36,8 +34,4 @@ function new_form() {
     )
 }
 
-//export the 'new_form' component for use in other parts of the application.
-module.exports = new_form
-
-
-
+module.exports = edit_form
