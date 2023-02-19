@@ -4,8 +4,23 @@
 const router = require('express').Router()
 
 //set up a route for the root path of the web server that will listen for GET requests. When GET request is received, excecute the callback function that will send the response t the client with the string "GET/places"
-router.get('/', (req,res) => {
-    res.send('GET /places')
+
+router.get('/', (req, res) => {
+    let places = [{
+        name: 'H-Thai-ML',
+        city: 'Seattle',
+        state: 'WA',
+        cuisines: 'Thai, Pan-Asian',
+        pic: 'http://placekitten.com/250/250'
+      }, {
+        name: 'Coding Cat Cafe',
+        city: 'Phoenix',
+        state: 'AZ',
+        cuisines: 'Coffee, Bakery',
+        pic: 'http://placekitten.com/250/250'
+      }]
+      
+    res.render('places/index', {places})
 })
 
 //export the router instance so that it can be used by other parts of the application.
