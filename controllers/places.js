@@ -6,20 +6,9 @@ const router = require('express').Router()
 
 router.post('/', (req, res) => {
     console.log(req.body)
-    if (!req.body.pic) {
-        // Default image if one is not provided
-        req.body.pic = 'http://placekitten.com/400/400'
-    }
-    if (!req.body.city) {
-        req.body.city = 'Anytown'
-    }
-    if (!req.body.state) {
-        req.body.state = 'USA'
-    }
-    places.push(req.body)
-    res.redirect('/places')
+    res.send('POST /places')
 })
-
+  
 //set up a route for the root path of the web server that will listen for GET requests. When GET request is received, excecute the callback function that will send the response t the client with the string "GET/places
 router.get('/', (req, res) => {
     let places = [{
