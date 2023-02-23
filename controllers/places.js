@@ -2,29 +2,26 @@
 
 //import the Express module and create a new router instance using the 'Router()' function that will define routes for the web server.
 const router = require('express').Router()
-
+const places = require("../models/places.js")
 
 router.post('/', (req, res) => {
     console.log(req.body)
-    res.send('POST /places')
+    if (!req.body.pic) {
+    //Default image if one is not provided
+    req.body.pic = 'http://placekitten.com/400/400'
+    }
+    if (!req.body.city) {
+        req.body.city = 'Anytown'
+    }
+    if (!req.body.state) {
+        req.body.state = 'USA'
+    }
+    places.push(req.body)
+    res.redirect('/places')
 })
   
 //set up a route for the root path of the web server that will listen for GET requests. When GET request is received, excecute the callback function that will send the response t the client with the string "GET/places
-router.get('/', (req, res) => {
-    let places = [{
-        name: 'H-Thai-ML',
-        city: 'Seattle',
-        state: 'WA',
-        cuisines: 'Thai, Pan-Asian',
-        pic: "/images/staceyDoylePanAsian.jpg" 
-      }, {
-        name: 'Coding Cat Cafe',
-        city: 'Phoenix',
-        state: 'AZ',
-        cuisines: 'Coffee, Bakery',
-        pic: '/images/catCoffeeMug.jpg'
-      }]
-      
+router.get('/', (req, res) => { 
     res.render('places/index', {places})
 })
 
