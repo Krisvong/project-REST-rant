@@ -1,43 +1,41 @@
-//import the React library
 const React = require('react')
-//import the 'Def' component from the '../default' file. Use to wrap the content of this component in a layout that provides consistent structure and styling for all pages of the application.
 const Def = require('../default')
 
-function new_form() {
+function new_form () {
     return (
         <Def>
-            <main>
-                <h1>Add a New Place</h1>
-                <form>
-                    <label>
-                        Name:
-                        <input type="text" name="name" />
-                    </label>
-                    <br />
-                    <label>
-                        Description:
-                        <input type="text" name="description" />
-                    </label>
-                    <br />
-                    <label>
-                        Address:
-                        <input type="text" name="address" />
-                    </label>
-                    <br />
-                    <label>
-                        Image URL:
-                        <input type="text" name="image" />
-                    </label>
-                    <br />
-                    <button type="submit">Submit</button>
-                </form>
-            </main>
+          <main>
+            <h1>Add a New Place</h1>
+            <form method="POST" action="/places">
+                <div className="form-group">
+                    <label htmlFor="name">Place Name</label>
+                    <input className="form-control" id="name" name="name" required/>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="pic">Place Picture</label>
+                    <input className="form-control" /*type="url"*/ id="pic" name="pic"/>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="city">City</label>
+                    <input className="form-control" id="city" name="city"/>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="state">State</label>
+                    <input className="form-control" id="state" name="state"/>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="cuisines">Cuisines</label>
+                    <input className="form-control" id="cuisines" name="cuisines" required />
+                </div>
+                    <input className="btn btn-primary" type="submit" value="Add Place" />
+            </form>
+          </main>
         </Def>
     )
 }
 
-//export the 'new_form' component for use in other parts of the application.
 module.exports = new_form
+
 
 
 
