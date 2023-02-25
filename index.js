@@ -2,15 +2,17 @@
 
 //Load the 'dotenv' module and call its 'config()' function to load environment variables from a file named '.env' in the root directory of the project. The environment variables are loaded into 'process.env' and can be accessed by the application code. 
 require('dotenv').config()
-
-//import the 'express' module and create an instance of the 'express()' application that will create a new Express app that an be used to handle incoming requests and send responses back to the client. 
 const express = require('express');
+const methodOverride = require('method-override')
 const app = express()
 
+// Express Settings
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
+app.use(methodOverride('_method'))
+
 
 //set up a middleware function that maps all requests that start with '/places' to a router defined in the file './controllers/places' which will allow the router to handle all requests to the '/places' path.
 app.use('/places', require('./controllers/places'))

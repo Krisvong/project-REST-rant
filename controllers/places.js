@@ -37,12 +37,35 @@ router.get('/:id', (req, res) => {
         res.render('error404') 
     }
     else {
-    res.render('places/show', {place: places[id]})
+    res.render('places/show', { place: places[id], id: id })
     }
 })
 
-router.get('/edit', (req, res) => {
-    res.render('places/edit')
+router.get('/:id/edit', (req, res) => {
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+        res.render('error404')
+    } else if (!places[id]) {
+        res.render('error404')
+    } else {
+       res.render('places/edit', { 
+        place: places[id], 
+        index: id })
+    }
 })
+
+router.delete('/:id', (req, res) => {
+    console.log("test")
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+        res.render('error404')
+    } else if (!places[id]) {
+        res.render('error404')
+    } else {
+        places.splice(id, 1)
+        res.redirect('/places')
+     }
+    })
+
 //export the router instance so that it can be used by other parts of the application.
 module.exports = router

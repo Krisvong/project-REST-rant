@@ -52,6 +52,10 @@ nav li {
   margin-right: 25px;
 }
 
+.card-body ul {
+  list-style-type: none;
+}
+
 nav a {
   color: white;
   font-size: 1.5em;
@@ -60,4 +64,8 @@ nav a {
 nav a:hover {
   color: pink;
   text-decoration: none;
+}
+
+form {
+  text-align: center;
 }

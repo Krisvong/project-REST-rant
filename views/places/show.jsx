@@ -1,13 +1,58 @@
 const React = require('react')
 const Def = require('../default')
 
-function show() {
-    return (
-        <Def>
-            <main>
-                <h1>Show Page</h1>
-            </main>
-        </Def>
-    )
+
+function show ({place, id}) {
+  return (
+    <Def>
+      <main className="container">
+        <div className="row">
+          <div className="col-md-6">
+            <h1>{ place.name }</h1>
+            <img className="img-fluid" src={ place.pic } alt={ place.name } />
+          </div>
+          <div className="col-md-6">
+            <div className="card">
+              <div className="card-body">
+                <h1>Rating:</h1>
+                <p>Not Rated</p>
+              </div>
+            </div>
+            <div className="card">
+              <div className="card-body">
+                <h1>Description:</h1>
+                <p>City: { place.city }</p>
+                <p>State: { place.state }</p>
+                <p>Cuisines:</p>
+                <ul>
+                  <li>{place.cuisines}</li>
+                </ul>
+              </div>
+            </div>
+            <div className="card comments">
+              <div className="card-body">
+                <h1>Comments:</h1>
+                <p>No comments yet!</p>
+              </div>
+             </div>
+             <div className="card">
+              <div className="card-body">
+              <a href={`/places/${id}/edit`} className="btn btn-warning"> 
+                 Edit
+              </a>     
+              <form method="POST" action={`/places/${id}?_method=DELETE`}> 
+                <button type="submit" className="btn btn-danger">
+                  Delete
+                </button>
+              </form> 
+             </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </Def>
+  )
 }
+
 module.exports = show
+
