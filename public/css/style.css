@@ -10,10 +10,11 @@ body {
 }
 
 img {
-  height: 400px;
-  width: 400px;
   border: 1px solid black;
-
+  border-radius: 8px;
+  max-width: 50%;
+  max-height: 50%;
+  
 }
 
 main {
@@ -84,3 +85,4 @@ form {
 input.form-control {
   border: 1px solid black;
 }
+
