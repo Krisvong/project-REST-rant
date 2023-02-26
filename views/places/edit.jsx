@@ -7,7 +7,7 @@ function edit_form({ place, index}){
             <main>
                 <h1>Edit {place.name}</h1>
                 <form method="POST" action={`/places/${index}?_method=PUT`}>
-                    <div className="row">
+                    {/* <div className="row"> */}
                        <div className="form-group col-sm-6">
                          <label htmlFor="name">Place Name</label>
                          <input className="form-control" id="name" name="name" defaultValue={place.name} required/>
@@ -76,11 +76,11 @@ function edit_form({ place, index}){
                     <option value="WY">Wyoming</option>
                 </datalist>
                 </div>
-                <div className="form-group">
+                <div className="form-group col-sm-6">
                     <label htmlFor="cuisines">Cuisines</label>
                     <input className="form-control" id="cuisines" name="cuisines" defaultValue={place.cuisines} required />
                 </div>
-            </div>  
+            {/* </div>   */}
                     <input className="btn btn-primary" type="submit" value={"Update " + place.name} />
             </form>                
             </main>

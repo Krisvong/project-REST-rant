@@ -4,7 +4,7 @@ const Def = require('../default')
 function new_form () {
     return (
         <Def>
-          <main>
+          <main className="center-content">
             <h1>Add a New Place</h1>
             <form method="POST" action="/places">
                 <div className="form-group col-sm-6">

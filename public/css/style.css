@@ -1,6 +1,8 @@
 h1 {
     text-align: center;
     color: cornflowerblue;
+    padding: 20px;
+    
   }
 
 body {
@@ -9,7 +11,9 @@ body {
 
 img {
   height: 400px;
-  width: 400px
+  width: 400px;
+  border: 1px solid black;
+
 }
 
 main {
@@ -35,16 +39,18 @@ main {
   bottom: 0;
   width: 100%;
   height: 60px; 
+  background-color: #F4D570;
 }
 
 nav {
   background-color: cornflowerblue;
-  padding: 10px;
+  padding: 20px;
+  font-family: Open Sans;
 }
 
 nav ul {
   list-style-type: none;
-  margin: 0;
+  margin: 0em;
 }
 
 nav li {
@@ -66,6 +72,15 @@ nav a:hover {
   text-decoration: none;
 }
 
+div.form-group.col-sm-6 {
+  width: 50%;
+  margin: 30px auto;
+} 
+
 form {
-  text-align: center;
+  margin-top: 50px;
+}
+
+input.form-control {
+  border: 1px solid black;
 }

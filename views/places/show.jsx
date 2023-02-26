@@ -37,11 +37,11 @@ function show ({place, id}) {
              </div>
              <div className="card">
               <div className="card-body">
-              <a href={`/places/${id}/edit`} className="btn btn-warning"> 
+              <a href={`/places/${id}/edit`} className="btn btn-warning"><i class="bi bi-pencil"></i> 
                  Edit
               </a>     
               <form method="POST" action={`/places/${id}?_method=DELETE`}> 
-                <button type="submit" className="btn btn-danger">
+                <button type="submit" className="btn btn-danger"><i class="bi bi-trash"></i>
                   Delete
                 </button>
               </form> 
