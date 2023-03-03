@@ -28,12 +28,6 @@ function show ({place, id}) {
                 <h1>Description:</h1>
                 <h2>{place.showEstablished()}</h2>
                 <h3>Serving {place.cuisines}</h3>
-                {/* <p>City: { place.city }</p>
-                <p>State: { place.state }</p>
-                <p>Cuisines:</p>
-                <ul>
-                  <li>{place.cuisines}</li>
-                </ul> */}
               </div>
             </div>
             <div className="card comments">
