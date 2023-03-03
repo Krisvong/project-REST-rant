@@ -10,9 +10,14 @@ function show ({place, id}) {
           <div className="col-md-6">
             <h1>{ place.name }</h1>
             <img className="img-fluid" src={ place.pic } alt={ place.name } />
+            <h3>Located in {place.city}, {place.state}</h3>
           </div>
           <div className="col-md-6">
             <div className="card">
+              <div className="card-body">
+              </div>
+            </div>
+           <div className="card">
               <div className="card-body">
                 <h1>Rating:</h1>
                 <p>Not Rated</p>
@@ -21,12 +26,14 @@ function show ({place, id}) {
             <div className="card">
               <div className="card-body">
                 <h1>Description:</h1>
-                <p>City: { place.city }</p>
+                <h2>{place.showEstablished()}</h2>
+                <h3>Serving {place.cuisines}</h3>
+                {/* <p>City: { place.city }</p>
                 <p>State: { place.state }</p>
                 <p>Cuisines:</p>
                 <ul>
                   <li>{place.cuisines}</li>
-                </ul>
+                </ul> */}
               </div>
             </div>
             <div className="card comments">
