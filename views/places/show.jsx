@@ -13,10 +13,14 @@ function show ({place, id}) {
     let sumRatings = place.comments.reduce((tot, c) => {
       return tot + c.stars
     }, 0)
-    let averageRating = sumRatings / place.comments.length
+    let averageRating = Math.round(sumRatings / place.comments.length)
+    let stars = ''
+    for (let i = 0; i < averageRating; i++) {
+      stars += '⭐️'
+    }
     rating = (
       <h3>
-        {Math.round(averageRating)} stars
+       {stars} 
       </h3>
     )
     comments = place.comments.map(c => {
@@ -94,10 +98,10 @@ function show ({place, id}) {
              </div>
              <div className="card">
               <div className="card-body">
-              <a href={`/places/${id}/edit`} className="btn btn-warning"><i class="bi bi-pencil"></i> 
+              <a href={`/places/${place.id}/edit`} className="btn btn-warning"><i class="bi bi-pencil"></i> 
                  Edit
               </a>     
-              <form method="POST" action={`/places/${id}?_method=DELETE`}> 
+              <form method="POST" action={`/places/${place.id}?_method=DELETE`}> 
                 <button type="submit" className="btn btn-danger"><i class="bi bi-trash"></i>
                   Delete
                 </button>
