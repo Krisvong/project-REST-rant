@@ -27,8 +27,6 @@ app.get('*', (req, res) => {
     res.status(404).render('error404')
   })
   
-
-
 //start the web server and tell it to listen for incoming requests on the port specified in the 'PORT' environment variable.
 app.listen(process.env.PORT, () => {
     console.log("I AM ALIVE!")
