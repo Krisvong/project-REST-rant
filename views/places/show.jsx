@@ -68,8 +68,9 @@ function show ({place, id}) {
               <div className="card-body">
                 <h1>Comments:</h1>
                 {comments}
+                <a href={`/places/${place.id}/comment`}>Add New Comment</a>
 
-                <form method ='POST' action={`/places/${place.id}/comment`}>
+                {/* <form method ='POST' action={`/places/${place.id}/comment`}>
 
                <div>  
                 <label htmlFor="author">Author:</label>
@@ -92,7 +93,7 @@ function show ({place, id}) {
               </div> 
 
                 <button type="submit">Submit</button>
-              </form>
+              </form> */}
 
               </div>
              </div>

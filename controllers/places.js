@@ -42,6 +42,15 @@ router.get('/:id', (req, res) => {
     })
 })
 
+//new comment jsx
+router.get('/:id/comment', (req, res) => {
+    console.log(req.body);
+    db.Place.findById(req.params.id)
+      .then(place => {
+        res.render('places/newcomment', { place });
+      })
+  })
+
 router.put('/:id', (req, res) => {
     db.Place.findByIdAndUpdate(req.params.id, req.body)
     .then(() => {
@@ -74,7 +83,6 @@ router.get('/:id/edit', (req, res) => {
     })
 })
     
-
 router.post("/:id/comment", (req, res) => {
     req.body.rant = req.body.rant ? true : false
       console.log(req.body)
