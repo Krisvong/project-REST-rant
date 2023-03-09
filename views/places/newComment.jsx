@@ -31,4 +31,30 @@ function comment_form ({place}) {
     )
 }
 
+{/* <form method ='POST' action={`/places/${place.id}/comment`}>
+
+               <div>  
+                <label htmlFor="author">Author:</label>
+                <input className='form-control' id="author" name="author"/>
+              </div> 
+
+              <div className='form-group'>
+                <label htmlFor="content">Content:</label>
+                <input className='form-control' id='content' name='content' type='textarea' />
+              </div>
+
+              <div className='form-group'>
+                <label htmlFor='stars'>Star Rating</label>
+                <input className='form-control' id='stars' name='stars' type='range' step='0.5' min='0' max='5' />
+              </div>
+
+              <div className='form-group'>
+                <label htmlFor='rant'>Rant</label>
+                <input  id='rant' name='rant' type='checkbox' defaultChecked/>
+              </div> 
+
+                <button type="submit">Submit</button>
+              </form> */}
+
+
 module.exports = comment_form
